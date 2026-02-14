@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Maison Cat Café</title>
+  <link rel="stylesheet" href="catcaffe.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" ><img src="images/logo.png" alt="Maison Cat Café Logo" width="190" height="190"></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html" class="active">Reservation</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="confirmation-page">
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="video/catrsvp.mp4" type="video/mp4">
+      <p>Your browser does not support the video tag.</p>
+    </video>
+  </div>
+  <div class="confirmation-message">
+    <h1 class="ml2">Thank You for The RSVP!</h1>
+    <p>Your reservation has been successfully received. We look forward to welcoming you to Maison Cat Café!</p>
+    <p>A confirmation email has been sent to you with the details of your reservation.</p>
+    <a href="index.html" class="btn btn-lg return-btn">Return to Home Page</a>
+  </div>
+  
+</main>
+
+<footer>
+  <p> &copy; 2025 Maison Cat Café. All rights reserved.</p>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml2');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml2 .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70*i
+  }).add({
+    targets: '.ml2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+
+</body>
+</html>

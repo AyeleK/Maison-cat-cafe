@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Maison Cat Café</title>
+  <link rel="stylesheet" href="catcaffe.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" ><img src="images/logo.png" alt="Maison Cat Café Logo" width="190" height="190"></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reservation.html" class="active">Reservation</a>
+    <a href="adopt.html">Adopt</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="reservation">
+<div class="title">
+<h1>Reserve Your Visit</h1>
+<p>Choose a date and time to enjoy our cats and café space.</p>
+<p class="text-center mb-4 fw-semibold">
+  All guests must be <strong>16 years or older</strong> to attend.
+</p>
+</div>
+
+<div class="session" >
+  <div class="card h-100">
+    <img class="card-img-top" src="images/session30.jpg" alt="30 minute session">
+    <div class="card-body">
+      <h4 class="card-title">30-Minute Cat Café Session</h4>
+
+      <p class="card-text">
+        $12 per person<br>
+        Includes <strong>1 drink</strong> and <strong>1 pastry</strong> of your choice
+      </p>
+
+      <form class="reservation-form" data-price="12">
+        <div class="mb-2">
+          <label class="form-label">Number of Guests</label>
+          <input type="number" min="1" value="1" class="form-control guests" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Date</label>
+          <input type="date" class="form-control date" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Time</label>
+          <select class="form-control time" required>
+            <option value="">Select Time</option>
+            <option>10:00 AM</option>
+            <option>10:30 AM</option>
+            <option>11:00 AM</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>2:30 PM</option>
+            <option>3:00 PM</option>
+            <option>3:30 PM</option>
+          </select>
+        </div>
+
+        <p class="fw-bold total-price">$12</p>
+
+        <button type="submit" class="btn">
+          Reserve 30-Minute Session
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="session" >
+  <div class="card h-100">
+    <img class="card-img-top" src="images/session60.jpg" alt="60 minute session">
+    <div class="card-body">
+      <h4 class="card-title">60-Minute Cat Café Session</h4>
+
+      <p class="card-text">
+        $22 per person<br>
+        Includes <strong>1 drink</strong> and <strong>2 pastries</strong> of your choice
+      </p>
+
+      <form class="reservation-form" data-price="22">
+        <div class="mb-2">
+          <label class="form-label">Number of Guests</label>
+          <input type="number" min="1" value="1" class="form-control guests" required>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Date</label>
+          <input type="date" class="form-control date" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Time</label>
+          <select class="form-control time" required>
+            <option value="">Select Time</option>
+            <option>10:00 AM</option>
+            <option>10:30 AM</option>
+            <option>11:00 AM</option>
+            <option>11:30 AM</option>
+            <option>12:00 PM</option>
+            <option>12:30 PM</option>
+            <option>1:00 PM</option>
+            <option>1:30 PM</option>
+            <option>2:00 PM</option>
+            <option>2:30 PM</option>
+            <option>3:00 PM</option>
+          </select>
+        </div>
+
+        <p class="fw-bold total-price">$22</p>
+
+        <button type="submit" class="btn">
+          Reserve 60-Minute Session
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+    
+
+
+<!-- Card Payment Modal -->
+<div id="paymentModal" class="modal-overlay" action="confirmation.html" method="post">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Payment Information</h2>
+    <form id="paymentForm">
+      <div class="form-group">
+        <label>Cardholder Name</label>
+        <input type="text" name="name" placeholder="Mark Lee" required>
+      </div>
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" name="cardNumber" maxlength="16" placeholder="1111-2222-3333-4444" required>
+      </div>
+      <div class="form-group">
+        <label>Expiration</label>
+        <input type="month" name="expiry" required>
+      </div>
+      <div class="form-group">
+        <label>CVV</label>
+        <input type="text" name="cvv" maxlength="3" placeholder="654" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email"  placeholder="you@example.com" required>
+      </div>
+      <button type="submit" class="btn">Submit Payment</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+</main>
+
+
+<footer>
+  <p> &copy; 2025 Maison Cat Café. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.reservation-form').forEach(form => {
+    const guestsInput = form.querySelector('.guests');
+    const priceText = form.querySelector('.total-price');
+    const basePrice = parseInt(form.dataset.price);
+
+    function updatePrice() {
+      const guests = guestsInput.value || 1;
+      priceText.textContent = `$${guests * basePrice}`;
+    }
+
+    guestsInput.addEventListener('input', updatePrice);
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      showSuccessModal();
+      form.reset();
+      updatePrice();
+    });
+
+    updatePrice();
+  });
+</script>
+
+<script>
+  const forms = document.querySelectorAll('.reservation-form');
+  const modal = document.getElementById('paymentModal');
+  const closeBtn = modal.querySelector('.close-btn');
+  const paymentForm = document.getElementById('paymentForm');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  paymentForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    window.location.href = 'confirmation.html';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
+
+</body>
+</html>
